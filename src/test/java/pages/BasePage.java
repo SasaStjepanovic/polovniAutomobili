@@ -134,7 +134,7 @@ public class BasePage {
     }
 
     public void checkUrlPage(String url) {
-        String expextedUrl = "https://www.polovniautomobili.com" + url;
+        String expextedUrl = "https://polovniautomobili.com/" + url;
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         String actualUrl = driver.getCurrentUrl();
         System.out.println("Current url address: " + actualUrl);
