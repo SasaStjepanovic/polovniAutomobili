@@ -26,7 +26,6 @@ public class GeneralPage extends BasePage {
 
     public void clickHoverHeaderMenuItem(String hoverItem) throws InterruptedException {
             Actions actions = new Actions(driver);
-            pause(1);
             actions.moveToElement(driver.findElement(By.xpath("//ul[@class='uk-navbar-nav uk-hidden-small']//a[text()='"+hoverItem+"']"))).build().perform();
             System.out.println("hover item is pressed, " + hoverItem+ ".");
         }
@@ -39,29 +38,31 @@ public class GeneralPage extends BasePage {
         switch (NoItem.toUpperCase()) {
             case "FIRST": {
                 Actions actions = new Actions(driver);
-                pause(1);
                 actions.moveToElement(driver.findElement(By.xpath("//ul[@class='uk-navbar-nav uk-hidden-small']//li/a[text()='" + hoverSubItem + "']"))).build().perform();
                 System.out.println("hoversub item is pressed, " + hoverSubItem + ".");
             }
             break;
             case "SECOND": {
                 Actions actions = new Actions(driver);
-                pause(1);
                 actions.moveToElement(driver.findElement(By.xpath("//ul[@class='uk-navbar-nav uk-hidden-small']//a[text()=\"PONUDA VOZILA \"]/..//li//a[text()='"+hoverSubItem+"']"))).build().perform();
                 System.out.println("hover item is pressed, " + hoverSubItem + ".");
             }
             break;
             case "THIRD1": {
                 Actions actions = new Actions(driver);
-                pause(1);
                 actions.moveToElement(driver.findElement(By.xpath("//strong[text()='Auto delovi:']/../../..//div[2]//li//a[text()='"+hoverSubItem+"']"))).build().perform();
                 System.out.println("hover item is pressed, " + hoverSubItem + ".");
             }
             break;
             case "THIRD2": {
                 Actions actions = new Actions(driver);
-                pause(1);
                 actions.moveToElement(driver.findElement(By.xpath("//strong[text()='Najtraženije kategorije:']/../../..//div[2]//li//a[text()='"+hoverSubItem+"']"))).build().perform();
+                System.out.println("hover item is pressed, " + hoverSubItem + ".");
+            }
+            break;
+            case "FORTH": {
+                Actions actions = new Actions(driver);
+                actions.moveToElement(driver.findElement(By.xpath("//a[@id='new-ad-icon']/../../div/a[contains(text(),'"+hoverSubItem+"')]"))).build().perform();
                 System.out.println("hover item is pressed, " + hoverSubItem + ".");
             }
             break;

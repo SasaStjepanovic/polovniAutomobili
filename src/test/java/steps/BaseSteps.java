@@ -30,7 +30,7 @@ public class BaseSteps extends BaseTest {
 
     @After
     public void tearDown() throws IOException {
-//        quit();
+        quit();
     }
 
     @Given("a user reads test data from {string} {string} by id {string}")
@@ -49,7 +49,7 @@ public class BaseSteps extends BaseTest {
 
     @Then("user should be verify I sub menu item")
     public void userShouldBeVerifyISubMenuItem() throws InterruptedException {
-        new GeneralPage(driver).verifyHeaderSubMenuItem(data.get("subHeaderItemIa"));
+        new GeneralPage(driver).verifyHeaderSubMenuItem(data.get("subHeaderItemI"));
     }
 
     @Then("user should be verify header menu item")
@@ -69,7 +69,7 @@ public class BaseSteps extends BaseTest {
 
     @Then("user should be verify II sub menu item")
     public void userShouldBeVerifyIISubMenuItem() throws InterruptedException {
-        new GeneralPage(driver).verifyHeaderSubMenuItem(data.get("subHeaderItemIa"));
+        new GeneralPage(driver).verifyHeaderSubMenuItem(data.get("subHeaderItemII"));
     }
 
     @And("user clicks III sub menu item")
