@@ -1,4 +1,4 @@
-# Web shop for selling of vehicle 
+# website for the sale of vehicles
 ### [https://www.polovniautomobili.com/](https://www.polovniautomobili.com/) ###
 ***
 ***
