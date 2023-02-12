@@ -8,7 +8,7 @@
 #### Microsoft Excel should be installed or access to Google Sheets ###
 
 
-## Instalation
+## Installation
 
 #### Google Chrome web browser ####
 #### apache-maven-3.8.6 ####
