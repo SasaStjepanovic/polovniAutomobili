@@ -7,8 +7,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.testng.Reporter;
+import pages.AutomobiliPage;
 import pages.BasePage;
 import pages.GeneralPage;
+import pages.LoginPage;
 import tests.BaseTest;
 
 import java.io.IOException;
@@ -166,6 +168,36 @@ public class BaseSteps extends BaseTest {
     @Then("user should be verify I sub menu item over attribute")
     public void userShouldBeVerifyISubMenuItemOverAttribute() {
         new GeneralPage(driver).gettingTextOverAttribute(data.get("subHeaderItemI"), data.get("attributeType"));
+    }
+
+    @Then("user should be verify title of page")
+    public void userShouldBeVrifyTitleOfPage() throws InterruptedException {
+        new AutomobiliPage(driver).verifyTitle(data.get("title"));
+    }
+
+    @And("user choosed automobile mark")
+    public void userChoosedAutomobileMark() {
+        new AutomobiliPage(driver).selectMarka(data.get("marka"));
+    }
+
+    @And("user clicks on mojProfil")
+    public void userClicksOnMojProfil() throws InterruptedException {
+        new LoginPage(driver).clickMojProfil();
+    }
+
+    @And("user clicks on mojProfil subItem")
+    public void userClicksOnMojProfilSubItem() {
+        new LoginPage(driver).clickMojProfiSubItem(data.get("subItem10a"));
+    }
+
+    @And("user enters email and or password for login")
+    public void userEntersEmailAndOrPasswordForLogin() {
+        new LoginPage(driver).login(data.get("email"), data.get("password"),data.get("rightEmailEnteredYesNo"));
+    }
+
+    @Then("user should be verified login action")
+    public void userShouldBeVerifiedLoginAction() throws InterruptedException {
+        new LoginPage(driver).verifyLoginPage(data.get("verificationType"), data.get("verificationText"));
     }
 }
 

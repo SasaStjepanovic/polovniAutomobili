@@ -34,6 +34,7 @@ public class GeneralPage extends BasePage {
         WebElement element = driver.findElement(By.xpath("//ul[@class='uk-navbar-nav uk-hidden-small']//a[text()='"+hoverItem+"']"));
         comparePartOfText(element, hoverItem1);
         }
+
     public void clickHoverHeaderSubMenuItem(String hoverSubItem, String NoItem) throws Exception {
         switch (NoItem.toUpperCase()) {
             case "FIRST": {

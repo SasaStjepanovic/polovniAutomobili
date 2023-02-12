@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -195,6 +196,12 @@ public class BasePage {
     public void verifyButtonInvisibility(){
         explicitWaitInvisibilityOfElement();
         System.out.println("Element");
+    }
+
+    public void dropDownList(WebElement element, String dropText){
+        Select select = new Select(element);
+        select.selectByVisibleText(dropText);
+        System.out.println("Drop down menu item " + dropText + ", is selected");
     }
 
 
