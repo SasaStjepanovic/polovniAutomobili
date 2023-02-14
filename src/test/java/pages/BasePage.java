@@ -88,33 +88,26 @@ public class BasePage {
         }
     }
 
-    public void checkCheckbox(WebElement element, String yesOrNo, String log) {
+    public void checkCheckbox(WebElement element, String log) {
         explicitWait(element);
 
         try {
             scrollToElement(element);
             new Actions(driver).moveToElement(element).perform();
-            if (yesOrNo.equalsIgnoreCase("Yes")) {
                 if (!element.isSelected()) {
                     element.click();
-                }
-            } else {
-                if (element.isSelected()) {
+                } else {
+                    element.isSelected();
                     System.out.println("element je vec kliknut");
-//                    element.click();
-                }
             }
             System.out.println("Checked element" + log);
         } catch (Exception e) {
             e.printStackTrace();
-            if (yesOrNo.equalsIgnoreCase("Yes")) {
-                if (!element.isSelected()) {
-                    element.click();
-                }
+            if (!element.isSelected()) {
+                element.click();
             } else {
-                if (element.isSelected()) {
-                    element.click();
-                }
+                element.isSelected();
+                System.out.println("element je vec kliknut");
             }
             System.out.println("Checked element" + log);
         }
@@ -145,6 +138,12 @@ public class BasePage {
     public void getAttribute(WebElement element, String expectedValue, String attributeType) {
         String actualValue = element.getAttribute(attributeType);
         System.out.println("Actual value of element is : " + actualValue);
+        Assert.assertEquals(actualValue, expectedValue);
+    }
+
+    public void getCssValue(WebElement element, String expectedValue, String cssType) {
+        String actualValue = element.getCssValue(cssType);
+        System.out.println("Actual CSS value of element is : " + actualValue);
         Assert.assertEquals(actualValue, expectedValue);
     }
 

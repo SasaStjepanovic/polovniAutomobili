@@ -7,10 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.testng.Reporter;
-import pages.AutomobiliPage;
-import pages.BasePage;
-import pages.GeneralPage;
-import pages.LoginPage;
+import pages.*;
 import tests.BaseTest;
 
 import java.io.IOException;
@@ -32,7 +29,7 @@ public class BaseSteps extends BaseTest {
 
     @After
     public void tearDown() throws IOException {
-        quit();
+//        quit();
     }
 
     @Given("a user reads test data from {string} {string} by id {string}")
@@ -198,6 +195,31 @@ public class BaseSteps extends BaseTest {
     @Then("user should be verified login action")
     public void userShouldBeVerifiedLoginAction() throws InterruptedException {
         new LoginPage(driver).verifyLoginPage(data.get("verificationType"), data.get("verificationText"));
+    }
+
+    @And("user clicks on registration")
+    public void userClicksOnRegistration() {
+        new RegistrationPage(driver).pressRegistrationButton();
+    }
+
+    @And("user enters email")
+    public void userEntersEmail() {
+        new RegistrationPage(driver).enterEmail(data.get("randomEmailYesNo"),data.get("email"));
+    }
+
+    @And("user enters password")
+    public void userEntersPassword() {
+        new RegistrationPage(driver).enterPassword(data.get("password"), data.get("secondPassword"));
+    }
+
+    @And("user checkbox")
+    public void userCheckbox() {
+        new RegistrationPage(driver).checkPrihvatam();
+    }
+
+    @And("user clicks emaila button")
+    public void userClicksEmailaButton() {
+        new RegistrationPage(driver).confirmAccountOverEmailaTelefona(data.get("buttonColor"), data.get("cssType"));
     }
 }
 

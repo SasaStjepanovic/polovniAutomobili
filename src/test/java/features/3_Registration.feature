@@ -1,18 +1,20 @@
-#Feature: Login scenarios include valid login and invalid login with combination of wrong credentials
-#
-#  @Automobili
-#  Scenario Outline: Login valid user
-#
-#    Given a user reads test data from "polovniautomobili" "mojprofil" by id "<TC_ID>"
-#    And user clicks on mojProfil
-#    And user clicks on mojProfil subItem
-#    And user enters email and or password for login
-#    Then user should be verified login action
-#
-#    Examples:
-#      | TC_ID  |
-#      | SI_001 |
-#
+Feature: Registration include valid and invalid scenarios with appropriate assertation
+
+  @Automobili
+  Scenario Outline: Registration valid user (random email and known password)
+
+    Given a user reads test data from "polovniautomobili" "mojprofil" by id "<TC_ID>"
+    And user clicks on registration
+    And user enters email
+    And user enters password
+    And user checkbox
+    And user clicks emaila button
+#    Then user should be verified confirmation of button
+
+    Examples:
+      | TC_ID  |
+      | SI_006 |
+
 #  @Automobili
 #  Scenario Outline: Login invalid user(empty email)
 #
